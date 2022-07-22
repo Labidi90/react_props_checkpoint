@@ -1,16 +1,24 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
-import FullName from "./profile/FullName";
-import Profession from "./profile/Profession";
-import Bio from "./profile/Bio";
+import Profile from "./profile/Profile";
+import img from "./img.jpg";
 
 function App() {
+  const handleName = (profileName) => {
+    alert(`my name is ${profileName}`);
+  };
+
   return (
     <div className="App">
-      <FullName Name="Abidi Mohamed" />
-      <Profession profession="FullStack Developer" />
-      <Bio bio="Recent computer science graduate with a passion for developing scalable web applications and working across the full stack. I am looking to join forces with Red Technologies to continue to grow my skill set while contributing to the positive outcome of making people richer smarter and happier." />
+      <Profile
+        showName={handleName}
+        name="Abidi Mohamed"
+        profession="Fullstack Developer"
+        bio="Recent computer science graduate with a passion for developing scalable web applications and working across the full stack. I am looking to join forces with Red Technologies to continue to grow my skill set while contributing to the positive outcome of making people richer smarter and happier."
+      >
+        <img src={img} alt="profile picture" />
+      </Profile>
     </div>
   );
 }
